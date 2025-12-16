@@ -96,7 +96,10 @@ wmic process where name="chat_server.exe" get ProcessId,ThreadCount
 
 ### Sdílená paměť
 
-- procesy běžně čekat nemohou, ale mohou, pokud jim to umožníme
+- proces běžně nemůže čekat na data v paměti jiného procesu (protože do ní nevidí)
+- aby mohly procesy komunikovat mezi sebou, musíme explicitně vyžádat sdílenou paměť od OS
+- rizika jako race condition, deadlock, starvation,..
+
 - alokace sdílené paměti:
   - `shmget`
   - `mmap`
@@ -141,10 +144,6 @@ sem_post  // unlock
   - čeká neomezeně dlouho
 - zdroj vlastní jiný proces z této množiny
 - vzniká cyklická závislost
-
-Řešení:
-- vyhýbat se deadlocku
-- detekovat ho a zotavit se
 
 ### Časově závislá chyba (race condition)
 
