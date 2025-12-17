@@ -301,6 +301,10 @@ $ ./proj2 3 2 100 100 100
 21: Z 3: going home
 ```
 
+##### Testování
+
+Projekt lze otestovat testovacím skriptem, který je dostupný na: https://github.com/Blacki005/IOS_tester_2023
+
 ## Zdroje
 
 - https://cw.fel.cvut.cz/old/_media/courses/a0b36pr2/lectures/07/36pr2-07_vlakna_uvod.pdf
